@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="engbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9c5a1e" />
+      <stop offset="1" stop-color="#3d2208" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#engbg)" stroke="#ffc94d" stroke-width="4" />
+  <!-- pessoa -->
+  <path d="M32 108c0-20 12-32 28-32s28 12 28 32Z" fill="#ffd977" />
+  <path d="M50 76h20l-4 14h-12Z" fill="#e0454f" />
+  <circle cx="60" cy="54" r="18" fill="#5c3a24" />
+  <circle cx="53" cy="55" r="2.6" fill="#1a0d06" />
+  <circle cx="67" cy="55" r="2.6" fill="#1a0d06" />
+  <path d="M54 63q6 5 12 0" stroke="#2e170e" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <!-- capacete -->
+  <path d="M38 44c0-13 10-22 22-22s22 9 22 22Z" fill="#ffc94d" stroke="#c8912a" stroke-width="2.5" />
+  <rect x="34" y="42" width="52" height="7" rx="3.5" fill="#ffc94d" stroke="#c8912a" stroke-width="2" />
+  <!-- chave inglesa -->
+  <g transform="rotate(35 92 74)">
+    <rect x="86" y="52" width="9" height="32" rx="4" fill="#c3cadb" />
+    <path d="M84 46h13l-2 8h-9Z" fill="#c3cadb" />
+    <circle cx="90.5" cy="46" r="7" fill="none" stroke="#c3cadb" stroke-width="5" />
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <radialGradient id="ocean" cx="0.35" cy="0.3" r="0.85">
+      <stop offset="0" stop-color="#5fd0ff" />
+      <stop offset="0.45" stop-color="#1f7fd6" />
+      <stop offset="0.85" stop-color="#0f3f8f" />
+      <stop offset="1" stop-color="#07214f" />
+    </radialGradient>
+    <radialGradient id="atmo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.74" stop-color="#79e0ff" stop-opacity="0" />
+      <stop offset="0.88" stop-color="#79e0ff" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#79e0ff" stop-opacity="0" />
+    </radialGradient>
+    <clipPath id="globe">
+      <circle cx="128" cy="128" r="100" />
+    </clipPath>
+  </defs>
+
+  <circle cx="128" cy="128" r="124" fill="url(#atmo)" />
+  <circle cx="128" cy="128" r="100" fill="url(#ocean)" />
+
+  <g clip-path="url(#globe)" fill="#3fbf7a">
+    <path d="M52 74c18-10 40-8 54 4 10 9 4 22-8 26-14 5-30 2-40-6-8-7-10-19-6-24Z" />
+    <path d="M96 122c16-6 34-2 42 10 7 11 2 26-10 34-14 9-32 8-42-2-11-11-8-34 10-42Z" />
+    <path d="M156 60c20-4 40 6 46 22 5 13-4 26-18 28-16 3-32-4-38-16-5-11-2-30 10-34Z" />
+    <path d="M186 128c14 0 24 12 22 26-2 13-14 22-26 18-11-4-16-18-12-30 3-9 9-14 16-14Z" />
+    <path d="M48 158c14-2 26 8 26 20 0 10-8 18-18 18-13 0-24-12-22-24 1-8 7-13 14-14Z" />
+  </g>
+
+  <g clip-path="url(#globe)" fill="#ffffff" opacity="0.35">
+    <ellipse cx="80" cy="96" rx="38" ry="12" />
+    <ellipse cx="170" cy="150" rx="46" ry="14" />
+    <ellipse cx="120" cy="196" rx="34" ry="10" />
+  </g>
+
+  <circle cx="128" cy="128" r="100" fill="none" stroke="#a8e8ff" stroke-width="2" opacity="0.5" />
+  <path d="M62 70a94 94 0 0 1 44-30c-30 12-52 40-56 74-3-16 3-32 12-44Z" fill="#ffffff" opacity="0.25" />
+</svg>

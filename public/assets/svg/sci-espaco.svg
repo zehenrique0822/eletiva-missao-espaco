@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="spbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#20306f" />
+      <stop offset="1" stop-color="#0a0f2c" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#spbg)" stroke="#22d3ee" stroke-width="4" />
+  <circle cx="30" cy="30" r="2.4" fill="#fff" />
+  <circle cx="92" cy="36" r="1.8" fill="#ffd977" />
+  <circle cx="26" cy="66" r="1.6" fill="#7ef0ff" />
+  <circle cx="96" cy="80" r="2" fill="#fff" opacity="0.8" />
+  <!-- pessoa -->
+  <path d="M32 108c0-20 12-32 28-32s28 12 28 32Z" fill="#e9eeff" />
+  <path d="M50 76h20l-4 14h-12Z" fill="#7c4dff" />
+  <circle cx="60" cy="52" r="18" fill="#f0c39a" />
+  <path d="M40 52c0-14 9-22 20-22s20 8 20 22c-2-10-9-14-20-14s-18 4-20 14Z" fill="#6b3f22" />
+  <path d="M40 52q-6 12 2 20-6-12-2-20Z" fill="#6b3f22" />
+  <path d="M80 52q6 12-2 20 6-12 2-20Z" fill="#6b3f22" />
+  <circle cx="53" cy="53" r="2.6" fill="#241209" />
+  <circle cx="67" cy="53" r="2.6" fill="#241209" />
+  <path d="M54 62q6 5 12 0" stroke="#8c4a3a" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <!-- telescópio de mão -->
+  <g transform="rotate(-30 88 66)">
+    <rect x="74" y="60" width="30" height="12" rx="6" fill="#5c6bc0" />
+    <rect x="100" y="57" width="10" height="18" rx="5" fill="#22d3ee" />
+  </g>
+</svg>

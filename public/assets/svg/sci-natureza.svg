@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="natbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f7a52" />
+      <stop offset="1" stop-color="#123a2a" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#natbg)" stroke="#34d399" stroke-width="4" />
+  <path d="M14 96q22-16 46-6 20 8 46-2v24H14Z" fill="#1d6b45" opacity="0.7" />
+  <!-- pessoa -->
+  <path d="M32 108c0-20 12-32 28-32s28 12 28 32Z" fill="#c8e6a0" />
+  <path d="M50 76h20l-4 14h-12Z" fill="#8d6244" />
+  <circle cx="60" cy="52" r="18" fill="#8d5a3c" />
+  <path d="M40 48c2-12 10-18 20-18s18 6 20 18c-6-6-12-8-20-8s-14 2-20 8Z" fill="#20140e" />
+  <path d="M40 40h40v6H40Z" fill="#b8763a" transform="rotate(-3 60 43)" />
+  <ellipse cx="60" cy="36" rx="22" ry="6" fill="#b8763a" />
+  <circle cx="53" cy="54" r="2.6" fill="#241209" />
+  <circle cx="67" cy="54" r="2.6" fill="#241209" />
+  <path d="M54 62q6 5 12 0" stroke="#5a2f22" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <!-- binóculos -->
+  <g transform="translate(84 62)">
+    <rect x="-2" y="0" width="12" height="22" rx="6" fill="#3a4a5e" />
+    <rect x="12" y="0" width="12" height="22" rx="6" fill="#3a4a5e" />
+    <rect x="8" y="6" width="6" height="5" fill="#3a4a5e" />
+  </g>
+</svg>

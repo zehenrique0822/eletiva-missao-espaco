@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 110" width="200" height="110">
+  <defs>
+    <linearGradient id="cbody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="0.55" stop-color="#cfd9f8" />
+      <stop offset="1" stop-color="#7f8dc4" />
+    </linearGradient>
+    <radialGradient id="cdome" cx="0.35" cy="0.25" r="0.8">
+      <stop offset="0" stop-color="#c8faff" />
+      <stop offset="0.5" stop-color="#3fa8e8" />
+      <stop offset="1" stop-color="#1a3f8f" />
+    </radialGradient>
+    <linearGradient id="cnet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7ef0ff" stop-opacity="0.85" />
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.05" />
+    </linearGradient>
+    <filter id="cshadow" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#070c22" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <g filter="url(#cshadow)">
+    <!-- campo coletor -->
+    <path d="M22 34h156l-16-26H38Z" fill="url(#cnet)" />
+    <!-- casco -->
+    <path d="M14 40h172a14 14 0 0 1-8 12l-22 22H44L22 52a14 14 0 0 1-8-12Z" fill="url(#cbody)" />
+    <rect x="14" y="34" width="172" height="10" rx="5" fill="#7c4dff" />
+    <!-- cabine -->
+    <path d="M76 44h48l-6 20H82Z" fill="url(#cdome)" />
+    <path d="M84 48h14l-3 10h-8Z" fill="#ffffff" opacity="0.45" />
+    <!-- turbinas -->
+    <circle cx="34" cy="62" r="10" fill="#4a5aa8" />
+    <circle cx="166" cy="62" r="10" fill="#4a5aa8" />
+    <circle cx="34" cy="62" r="4.5" fill="#22d3ee" />
+    <circle cx="166" cy="62" r="4.5" fill="#22d3ee" />
+    <!-- propulsão -->
+    <path d="M56 78h16l-8 20Z" fill="#ffc94d" opacity="0.9" />
+    <path d="M128 78h16l-8 20Z" fill="#ffc94d" opacity="0.9" />
+    <path d="M92 78h16l-8 26Z" fill="#ff9b3d" opacity="0.9" />
+  </g>
+</svg>

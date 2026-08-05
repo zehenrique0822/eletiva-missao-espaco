@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="mmetal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c4cdf0" />
+      <stop offset="0.35" stop-color="#8391c9" />
+      <stop offset="1" stop-color="#4d5893" />
+    </linearGradient>
+    <linearGradient id="mbase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6f7cb8" />
+      <stop offset="1" stop-color="#39427a" />
+    </linearGradient>
+    <filter id="msh" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#080e26" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <g filter="url(#msh)">
+    <path d="M24 108q36-12 72 0Z" fill="#2c3466" />
+    <rect x="26" y="94" width="68" height="14" rx="7" fill="url(#mbase)" />
+    <path d="M56 44c22 0 34 16 32 34l-14-2c2-12-6-20-18-20Z" fill="url(#mmetal)" />
+    <rect x="46" y="16" width="20" height="40" rx="9" fill="url(#mmetal)" transform="rotate(20 56 36)" />
+    <rect x="40" y="8" width="16" height="16" rx="6" fill="#7c4dff" transform="rotate(20 48 16)" />
+    <rect x="34" y="66" width="52" height="8" rx="4" fill="#414d86" />
+    <rect x="44" y="60" width="30" height="7" rx="3" fill="#22d3ee" opacity="0.85" />
+    <rect x="52" y="74" width="12" height="20" rx="5" fill="url(#mmetal)" />
+    <circle cx="86" cy="82" r="7" fill="#5b68a8" />
+    <circle cx="86" cy="82" r="3" fill="#a9b8f0" />
+    <path d="M52 22a12 12 0 0 1 8-4c-5 2-8 5-9 10-.4 2-2 1.4-1.6-.6.3-2 1.4-4 2.6-5.4Z" fill="#fff" opacity="0.6" />
+  </g>
+</svg>

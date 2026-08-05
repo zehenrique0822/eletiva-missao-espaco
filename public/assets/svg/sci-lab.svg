@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="labbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a4a9e" />
+      <stop offset="1" stop-color="#161f4d" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#labbg)" stroke="#7c4dff" stroke-width="4" />
+  <!-- pessoa -->
+  <path d="M32 108c0-20 12-32 28-32s28 12 28 32Z" fill="#ffffff" />
+  <path d="M52 76h16l-4 16h-8Z" fill="#22d3ee" />
+  <circle cx="60" cy="52" r="18" fill="#c98a5e" />
+  <path d="M42 50c0-12 8-20 18-20s18 8 18 20c-4-8-10-12-18-12s-14 4-18 12Z" fill="#2f1c15" />
+  <circle cx="53" cy="53" r="2.6" fill="#241209" />
+  <circle cx="67" cy="53" r="2.6" fill="#241209" />
+  <path d="M54 61q6 5 12 0" stroke="#8c4a3a" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <!-- tubo de ensaio -->
+  <g transform="rotate(18 92 74)">
+    <rect x="84" y="52" width="16" height="40" rx="8" fill="#dff6ff" opacity="0.9" />
+    <path d="M84 76h16v8a8 8 0 0 1-16 0Z" fill="#34d399" />
+    <circle cx="92" cy="70" r="2.6" fill="#34d399" opacity="0.8" />
+  </g>
+</svg>

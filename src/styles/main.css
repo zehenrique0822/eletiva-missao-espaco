@@ -1,0 +1,493 @@
+/* =========================================================================
+   Missão Espaço — estilos da casca HTML (canvas, overlays DOM e impressão)
+   Toda a interface do jogo é desenhada no Phaser; o CSS abaixo cobre apenas:
+   - o enquadramento responsivo do canvas
+   - os overlays HTML (entrada de nome e Termo de Compromisso)
+   - o layout de impressão do Termo
+   ========================================================================= */
+
+:root {
+  --space-900: #05070f;
+  --space-800: #0b1026;
+  --space-700: #121a3a;
+  --space-600: #1d2854;
+  --ink: #f2f6ff;
+  --ink-soft: #b9c4e8;
+  --violet: #7c4dff;
+  --cyan: #22d3ee;
+  --magenta: #ff4d9d;
+  --amber: #ffc94d;
+  --green: #34d399;
+  --radius-lg: 26px;
+  --radius-md: 16px;
+  --font-title: 'Baloo 2', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 15%, #1b2a63 0%, var(--space-800) 45%, var(--space-900) 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#game canvas {
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+  touch-action: none;
+}
+
+/* ---------- Splash inicial ---------- */
+#boot-splash {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  z-index: 50;
+  background: radial-gradient(circle at 50% 40%, #1b2a63 0%, var(--space-800) 50%, var(--space-900) 100%);
+  transition: opacity 0.45s ease;
+}
+
+#boot-splash.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.boot-rocket {
+  font-size: 64px;
+  animation: bootFloat 1.8s ease-in-out infinite;
+}
+
+.boot-title {
+  font-family: var(--font-title);
+  font-size: 30px;
+  letter-spacing: 5px;
+  margin: 4px 0 0;
+  color: var(--ink);
+}
+
+.boot-sub {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+@keyframes bootFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(4deg);
+  }
+}
+
+/* ---------- Camada de overlays HTML ---------- */
+#ui-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(5, 7, 15, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+#ui-layer.active {
+  display: flex;
+}
+
+.overlay-card {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: linear-gradient(160deg, #182354 0%, #101736 100%);
+  border: 2px solid rgba(124, 77, 255, 0.55);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  padding: clamp(20px, 4vw, 36px);
+  animation: overlayIn 0.35s cubic-bezier(0.22, 1.2, 0.4, 1);
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.overlay-card h2 {
+  font-family: var(--font-title);
+  font-size: clamp(22px, 4vw, 30px);
+  margin: 0 0 6px;
+  color: var(--amber);
+  letter-spacing: 1px;
+}
+
+.overlay-card h3 {
+  font-family: var(--font-title);
+  font-size: clamp(16px, 3vw, 20px);
+  margin: 18px 0 8px;
+  color: var(--cyan);
+}
+
+.overlay-card p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  font-size: clamp(14px, 2.4vw, 16px);
+}
+
+.overlay-card strong {
+  color: var(--ink);
+}
+
+/* Campos de formulário */
+.field {
+  margin: 14px 0;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+.field input[type='text'] {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(124, 77, 255, 0.5);
+  background: rgba(5, 8, 22, 0.75);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input[type='text']:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+}
+
+.hint {
+  font-size: 13px;
+  color: #8fa0d4;
+  margin-top: -4px;
+}
+
+/* Botões */
+.overlay-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn {
+  flex: 1 1 180px;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 15px 22px;
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #10142c;
+  background: linear-gradient(180deg, #ffd977 0%, var(--amber) 100%);
+  box-shadow: 0 6px 0 #c8912a, 0 12px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.2s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.06);
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #c8912a, 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.btn.secondary {
+  color: var(--ink);
+  background: linear-gradient(180deg, #3c4b93 0%, #26306a 100%);
+  box-shadow: 0 6px 0 #1a2150, 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.btn.secondary:active {
+  box-shadow: 0 2px 0 #1a2150, 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Seleção de avatar do formulário de nome */
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.avatar-option {
+  cursor: pointer;
+  border: 2px solid rgba(124, 77, 255, 0.35);
+  border-radius: var(--radius-md);
+  background: rgba(5, 8, 22, 0.6);
+  padding: 10px 6px;
+  text-align: center;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.avatar-option:hover {
+  transform: translateY(-3px);
+}
+
+.avatar-option img {
+  width: 100%;
+  max-width: 64px;
+  height: auto;
+  display: block;
+  margin: 0 auto 6px;
+  pointer-events: none;
+}
+
+.avatar-option span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.avatar-option.selected {
+  border-color: var(--cyan);
+  background: rgba(34, 211, 238, 0.14);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+}
+
+.avatar-option.selected span {
+  color: var(--ink);
+}
+
+/* ---------- Termo de Compromisso ---------- */
+.termo {
+  background: #fffdf7;
+  color: #1d2445;
+  border-color: rgba(255, 201, 77, 0.7);
+}
+
+.termo h2,
+.termo h3 {
+  color: #23306b;
+}
+
+.termo p {
+  color: #3a4370;
+}
+
+.termo .termo-head {
+  text-align: center;
+  border-bottom: 3px double #23306b;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.termo .termo-head .kicker {
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #7a5a10;
+  margin: 0;
+}
+
+.termo ul.commitments {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.termo ul.commitments li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 9px 12px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  background: #f4f2e7;
+  line-height: 1.5;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.termo ul.commitments li:hover {
+  background: #ecf0ff;
+}
+
+.termo ul.commitments li.checked {
+  background: #e5f7ee;
+}
+
+.termo ul.commitments input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: #1f9d63;
+  flex: 0 0 auto;
+}
+
+.termo .signature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.termo .signature .line {
+  border-bottom: 1.5px solid #23306b;
+  padding: 18px 4px 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #23306b;
+}
+
+.termo .signature .line small {
+  display: block;
+  font-weight: 600;
+  color: #6d76a3;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.termo .quote {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 5px solid var(--amber);
+  background: #fff6df;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: #4a3d13;
+}
+
+/* ---------- Aviso de rotação ---------- */
+#rotate-hint {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 7, 15, 0.94);
+  text-align: center;
+  padding: 24px;
+}
+
+#rotate-hint[hidden] {
+  display: none;
+}
+
+.rotate-icon {
+  font-size: 62px;
+  animation: rotateNudge 2s ease-in-out infinite;
+}
+
+.rotate-inner p {
+  margin: 6px 0;
+  color: var(--ink-soft);
+}
+
+.rotate-inner p strong {
+  font-family: var(--font-title);
+  font-size: 22px;
+  color: var(--ink);
+}
+
+@keyframes rotateNudge {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-90deg);
+  }
+}
+
+/* ---------- Impressão do Termo ---------- */
+@media print {
+  body {
+    background: #fff;
+    overflow: visible;
+  }
+
+  #game,
+  #boot-splash,
+  #rotate-hint,
+  .overlay-actions,
+  .no-print {
+    display: none !important;
+  }
+
+  #ui-layer {
+    position: static;
+    display: block !important;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
+
+  .overlay-card {
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    border: none;
+    box-shadow: none;
+    animation: none;
+    background: #fff;
+    color: #000;
+    padding: 0;
+  }
+
+  .termo ul.commitments li {
+    background: none;
+    border: 1px solid #999;
+  }
+}

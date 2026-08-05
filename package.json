@@ -1,0 +1,20 @@
+{
+  "name": "missao-espaco",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Jogo educativo da eletiva Missão Espaço - A Ciência por Trás das Grandes Descobertas",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "phaser": "^3.80.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}

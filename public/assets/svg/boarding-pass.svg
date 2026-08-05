@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 220" width="420" height="220">
+  <defs>
+    <linearGradient id="bp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf6" />
+      <stop offset="0.6" stop-color="#f6f2e4" />
+      <stop offset="1" stop-color="#e2dcc6" />
+    </linearGradient>
+    <linearGradient id="bpstrip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c4dff" />
+      <stop offset="1" stop-color="#4a1fd0" />
+    </linearGradient>
+    <filter id="bpsh" x="-15%" y="-25%" width="130%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#060b20" flood-opacity="0.55" />
+    </filter>
+  </defs>
+
+  <g filter="url(#bpsh)">
+    <rect x="8" y="10" width="404" height="200" rx="20" fill="url(#bp)" />
+    <rect x="8" y="10" width="404" height="200" rx="20" fill="none" stroke="#c9bfa0" stroke-width="3" />
+    <!-- canhoto -->
+    <rect x="300" y="10" width="112" height="200" rx="20" fill="url(#bpstrip)" />
+    <path d="M300 10v200" stroke="#fffdf6" stroke-width="4" stroke-dasharray="10 8" />
+    <!-- foguete no canhoto -->
+    <path d="M356 74c9 9 13.5 20 13.5 33l-5 10h-17l-5-10c0-13 4.5-24 13.5-33Z" fill="#ffffff" />
+    <circle cx="356" cy="100" r="6" fill="#22d3ee" />
+    <path d="M350 117h12l-6 16Z" fill="#ffc94d" />
+    <text
+      x="356"
+      y="160"
+      text-anchor="middle"
+      font-family="'Baloo 2','Trebuchet MS',sans-serif"
+      font-size="15"
+      font-weight="800"
+      letter-spacing="2"
+      fill="#ffffff"
+    >EMBARQUE</text>
+    <!-- selo -->
+    <circle cx="60" cy="60" r="30" fill="none" stroke="#e0454f" stroke-width="3" opacity="0.85" />
+    <text
+      x="60"
+      y="57"
+      text-anchor="middle"
+      font-family="'Baloo 2','Trebuchet MS',sans-serif"
+      font-size="12"
+      font-weight="800"
+      fill="#e0454f"
+      opacity="0.9"
+    >APTO</text>
+    <text
+      x="60"
+      y="72"
+      text-anchor="middle"
+      font-family="'Baloo 2','Trebuchet MS',sans-serif"
+      font-size="9"
+      font-weight="700"
+      fill="#e0454f"
+      opacity="0.9"
+    >MISSÃO 2026</text>
+    <!-- linhas de dados -->
+    <rect x="108" y="40" width="160" height="10" rx="5" fill="#c9bfa0" opacity="0.65" />
+    <rect x="108" y="60" width="120" height="8" rx="4" fill="#c9bfa0" opacity="0.5" />
+    <rect x="36" y="112" width="240" height="8" rx="4" fill="#c9bfa0" opacity="0.5" />
+    <rect x="36" y="130" width="180" height="8" rx="4" fill="#c9bfa0" opacity="0.4" />
+    <!-- código de barras -->
+    <g fill="#3a3f63">
+      <rect x="36" y="158" width="4" height="34" />
+      <rect x="44" y="158" width="2" height="34" />
+      <rect x="50" y="158" width="6" height="34" />
+      <rect x="60" y="158" width="3" height="34" />
+      <rect x="67" y="158" width="5" height="34" />
+      <rect x="76" y="158" width="2" height="34" />
+      <rect x="82" y="158" width="6" height="34" />
+      <rect x="92" y="158" width="3" height="34" />
+      <rect x="99" y="158" width="4" height="34" />
+      <rect x="107" y="158" width="2" height="34" />
+      <rect x="113" y="158" width="6" height="34" />
+      <rect x="123" y="158" width="3" height="34" />
+    </g>
+  </g>
+</svg>
